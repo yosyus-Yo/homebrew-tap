@@ -13,6 +13,8 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
-      - run: brew install --formula ./Formula/ai-observer.rb
+      - run: brew tap yosyus-Yo/tap
+      - run: brew trust --formula yosyus-Yo/tap/ai-observer
+      - run: brew install yosyus-Yo/tap/ai-observer
       - run: ai-observer --version
       - run: brew test ai-observer
